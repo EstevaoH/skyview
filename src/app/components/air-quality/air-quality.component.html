@@ -1,0 +1,36 @@
+<section class="air-quality">
+  <h2 class="title">
+    <ng-icon name="featherFeather"></ng-icon>
+    Qualidade do ar
+  </h2>
+
+  <p class="good">{{quality}}</p>
+  <p class="number">{{ airPollution.list[0].main.aqi }}</p>
+
+  <div *ngFor="let quality of airPollution.list" class="info">
+    <div class="number">
+      <p>{{ quality.components.pm2_5 | number : "1.0-1" }}</p>
+      <small>PM2.5</small>
+    </div>
+    <div class="number">
+      <p>{{ quality.components.so2 | number : "1.0-1" }}</p>
+      <small>PM10</small>
+    </div>
+    <div class="number">
+      <p>{{ quality.components.so2 | number : "1.0-1" }}</p>
+      <small>SO₂</small>
+    </div>
+    <div class="number">
+      <p>{{ quality.components.no2 | number : "1.0-1" }}</p>
+      <small>NO₂</small>
+    </div>
+    <div class="number">
+      <p>{{ quality.components.o3 | number : "1.0-1" }}</p>
+      <small>O₃</small>
+    </div>
+    <div class="number">
+      <p>{{ quality.components.co | number : "1.0-1" }}</p>
+      <small>CO</small>
+    </div>
+  </div>
+</section>

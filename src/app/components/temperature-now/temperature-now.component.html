@@ -1,0 +1,39 @@
+<section class="temperature-now">
+  <div class="location">
+    <ng-icon name="featherMapPin"></ng-icon>
+    <strong>{{ forecast.name }}, RN</strong>
+  </div>
+  <div class="temp">
+    <div class="number">
+      {{ forecast.main.temp | number : "1.0-0" }}
+      <div class="maxmin">
+        {{ forecast.main.temp_max | number : "1.0-0" }} °
+        <span>{{ forecast.main.temp_min | number : "1.0-0" }} ° </span>
+      </div>
+    </div>
+    <div class="celsius">°C</div>
+  </div>
+  <div class="statistics">
+    <div class="stats">
+      <ng-icon size="24" name="featherWind"></ng-icon>
+      <div class="info">
+        <p>Vento</p>
+        <h5>{{forecast.wind.speed}} <span>km/h</span></h5>
+      </div>
+    </div>
+    <div class="stats">
+      <ng-icon size="24" name="featherDroplet"></ng-icon>
+      <div class="info">
+        <p>Umidade</p>
+        <h5>{{ forecast.main.humidity }} <span>%</span></h5>
+      </div>
+    </div>
+    <div class="stats">
+      <ng-icon size="24" name="featherCloudRain"></ng-icon>
+      <div class="info">
+        <p>Chuva</p>
+        <h5>{{forecast.clouds.all}} <span>%</span></h5>
+      </div>
+    </div>
+  </div>
+</section>
